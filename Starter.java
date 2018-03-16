@@ -2,25 +2,22 @@ package com.accenture;
 
 public class Starter {
 
-	 static
-	 {
-		 System.out.println("this is starter block");
-	 }
 	public static void main(String[] args) 
-	{
-		System.out.println("First Line in main");
-		Employee e1=new Employee();
+	{	
+		int price=1000;
+		String col=new String("Red");
 		
-		System.out.println("First Line in main");
-		Employee e2=new Employee();
-		//JVM needs to load the Employee class first and hence static block will be executed
-				/*e1.empid=101;
-				e1.comName="Accenture";
-				Employee e2=new Employee();
-				System.out.println("emp2:"+e2.empid);
-				System.out.println("company:"+e2.comName);
-				//Employee.m1();
-				e1.m1();*/
+		//Engine e=new Engine(100,"V6");
+		//below line is the case of aggregation
+		//Car c=new Car(price,col,e);
+		//below is the case of composition because we have directly passed the value 
+		Car c=new Car(price,col,new Engine(100,"V6"));
+		System.out.println("price is:"+c.getPrice());
+		System.out.println("color is:"+c.getColor());
+		System.out.println(c.getEng().getType());
+		System.out.println(c.getEng().getPower());
 		
 	}
+
 }
+
